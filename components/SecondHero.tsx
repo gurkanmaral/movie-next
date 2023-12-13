@@ -12,7 +12,7 @@ const SecondHero = () => {
     <div className=''>
        {session.status === "authenticated" && 
        <div className=' text-[25px] md:text-[40px] w-full text-white font-thebold m-auto flex items-center justify-center mt-[20px] '>
-          <span> WELCOME {session?.data?.user?.name}</span>
+          <span className='font-heavitas text-[#fff]'> WELCOME <span className=''>{session?.data?.user?.name}</span></span>
         </div>}
         <div className='mt-[50px] w-[70%] m-auto flex flex-col gap-[50px] md:gap-[2px]'>
             <div className='w-full h-full flex flex-col md:flex-row items-center justify-center gap-[20px] md:gap-[1px]'>
