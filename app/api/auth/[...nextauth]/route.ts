@@ -1,11 +1,9 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { connectToDB } from "@/lib/mongoose";
 import User from "@/lib/models/user.model";
-import { generateRandomPassword } from "@/utils/generatePassword";
-import { AccountCircle } from "@mui/icons-material";
+
 
 
 

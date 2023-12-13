@@ -101,7 +101,7 @@ const form = useForm<z.infer<typeof UserValidation>>({
    const uploadImage = async(imagePath:string)=>{
       try {
   
-          const response = await fetch(`http://localhost:3000/api/upload`,{
+          const response = await fetch(`https://movie-next-fawn-zeta.vercel.app/api/upload`,{
               method: 'POST',
               body: JSON.stringify({path: imagePath})
           })
