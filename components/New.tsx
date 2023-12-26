@@ -55,7 +55,7 @@ const New = () => {
         <div className='flex flex-col gap-[10px]'>
           {filteredMovies?.map((movie)=>(
             <div className='flex flex-col items-center gap-[5px]' key={movie.id}> 
-            <Link href="/">
+            <Link href={`movie-details/${movie.id}`}>
               <Image 
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt="" 
               width={150}
@@ -76,7 +76,7 @@ const New = () => {
         <div className='flex flex-col gap-[10px]'>
           {filteredSeries?.map((serie)=>(
                <div className='flex flex-col items-center gap-[5px]' key={serie.id}> 
-               <Link href="/">
+               <Link href={`serie-details/${serie.id}`}>
                  <Image 
                  src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} alt="" 
                  width={150}

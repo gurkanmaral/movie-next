@@ -18,7 +18,7 @@ const PopularCard = ({movie,isMovie}:PopularCardProps) => {
 
   return (
     <div className='flex flex-col'>
-        <Link href="/">
+        <Link href={`/movie-details/${movie.id}`}>
             <div className=' h-[250px] w-[165px]  '>
             {posterUrl && (
             <Image

@@ -17,7 +17,7 @@ const PopularSeriesCard = ({serie}:PopularSeriesCard) => {
 
   return (
     <div className='flex flex-col'>
-        <Link href="/">
+        <Link href={`/serie-details/${serie.id}`}>
             <div className=' h-[250px] w-[165px]  '>
             {posterUrl && (
             <Image
