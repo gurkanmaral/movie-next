@@ -8,6 +8,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["mongoose"],
   },
     images: {
+        unoptimized: true,
         domains: ['image.tmdb.org','res.cloudinary.com'], 
         remotePatterns:[
           {
