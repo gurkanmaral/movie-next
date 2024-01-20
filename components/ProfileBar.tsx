@@ -2,7 +2,7 @@
 import { getOneUser } from '@/lib/actions/user.actions';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 
 const navlinks = [
@@ -39,7 +39,8 @@ const ProfileBar = () => {
     const path= pathname.split("/")[1];
     
  
-    
+    const previousIdRef = useRef<string | null>(null);
+
     const id = pathname.split("/")[2]; 
    
     
@@ -51,13 +52,20 @@ const ProfileBar = () => {
         return setUser(user)
         
     }
-    useEffect(()=>{
-        fetchUser(id) 
-    },[id])
+    useEffect(() => {
+      
+      if (id !== previousIdRef.current) {
+          fetchUser(id);
+         
+          previousIdRef.current = id;
+      }
+  }, [id]);
 
     if(!user){
       return (
-        <p>Loading..</p>
+        <div className='w-full md:max-w-5xl mx-auto rounded-[3px] bg-[#2c3440] '>
+          Loading..
+        </div>
       )
     }
 
